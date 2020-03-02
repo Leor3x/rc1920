@@ -1,5 +1,5 @@
 # rc1920
-## Prácticas de Representación del Conocimiento 2020
+Prácticas de Representación del Conocimiento 2020
 Universidad de Huelva
 Curso 2019-2020
 ## natural.pl
