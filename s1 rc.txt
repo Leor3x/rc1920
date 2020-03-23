@@ -1,0 +1,31 @@
+Ejercicios Semana 1
+
+https://github.com/Leor3x/rc1920
+
+1.- ¿Seria posible utilizando el predicado concatenar obtener cualquier par de números consecutivos de una lista?
+En caso afirmativo, ¿de qué forma tendría que utilizar el predicado concatenar para conseguirlo?
+
+Es posible obtener todas las parejas de números consecutivos de una lista mediante el uso de comodines usando el siguiente predicado:
+
+concatenar(_,[Elem1,Elem2|_],[1,3,5,7,9]).
+
+De esa manera Elem1 y Elem2 unificarían las parejas posibles (sería comparable a un recorrido en lenguaje imperativo).
+
+2.- ¿Es posible hacer un uso reversible del predicado invertir? Si no fuese posible, ¿podría justificar por qué?
+
+Es posible para listas simples, siempre y cuando no usen el operador is, para el cual si es importante el orden.
+
+3.- Sería capaz de indicar que característica hace que un predicado no sea reversible.
+
+Como se dice en el ejercicio anterior, si en un predicado se usa el operador "is", ésta evalúa la expresión a la derecha y la unifica
+en la izquierda. Para que esto pueda ocurrir, es necesario que las expresiones a la derecha del operador estén instanciadas. Si
+revertimos un enunciado que usa el operador "is", éste deja de funcionar debido a que las variables que se encuentran a la derecha
+ahora no están instanciadas.
+
+4.- Como hemos visto en clase, el uso reversible de los predicados es una característica muy potente de Prolog.
+Haga uso de una combinación de los predicados concatenar e invertir en el que se utilice esta técnica.
+
+invertir(L1,[6,5,4,3,2,1]),concatenar([1,2],L2,L1).
+//Resultado
+L1=[1,2,3,4,5,6] //Cadena invertida
+L2=[3,4,5,6] //Los numeros que pertenecen a L1 y no pertenecen a la cadena introducida
